@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Lista de compras</title>
+</head>
+<body>
+
+    
+
+    <h1>Lista de compras</h1>
+
+    <input type="text" id="caixaTexto">
+    <button id="btn"> incluir na lista</button>
+
+
+
+    <ul>
+        <li>Arroz</li>
+    </ul>
+
+   
+
+
+    <script>
+        var lista = document.querySelector('ul');
+        var produto = document.querySelector('#caixaTexto');
+        var botao = document.querySelector('#btn');
+    
+    
+        botao.addEventListener('click', adicionarProduto);
+    
+    function adicionarProduto(){
+            var item = '<li>' + produto.value + '</li>' ;
+            lista.innerHTML += item;
+            produto.value = '';
+            produto.focus();            
+
+        };   
+    
+        produto.addEventListener('keyup', function(e){
+           if(e.keyCode === 13) {
+               adicionarProduto()
+           }
+
+        }) 
+    
+    </script>
+
+
+
+</body>
+</html>
